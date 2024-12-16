@@ -13,8 +13,14 @@ export default {
         foreground: "var(--foreground)",
       },
       backgroundImage: {
-        'boom': "url('/boom.png')",
-      }
+        boom: "url('/boom.png')",
+      },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+      },
+      borderColor: {
+        "black-34": "rgba(0, 0, 0, 0.34)",
+      },
     },
   },
   plugins: [],

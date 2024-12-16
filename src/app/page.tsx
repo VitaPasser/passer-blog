@@ -1,15 +1,11 @@
-import Image from 'next/image'
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 export default function Home() {
   return (
-    <div className="bg-boom bg-no-repeat bg-center bg-cover flex justify-center items-center min-h-screen flex-col">
-      <h1 className="text-8xl font-bold text-stroke">Under Construction</h1>
-      <Image
-        className='animate-spin mt-36'
-        src="/passer.png"
-        alt='Passer move to around'
-        width={600}
-        height={600} />
+    <div className='flex flex-col gap-y-5'>
+      <Header />
+      <Footer />
     </div>
   );
 }
