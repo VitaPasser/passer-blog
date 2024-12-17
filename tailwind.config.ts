@@ -15,6 +15,8 @@ export default {
         "cod-gray": "#121212",
         "purple-heart": "#6941C6",
         "pale-sky": "#667085",
+        haiti: "#090D1F",
+        ghost: "#C0C5D0",
       },
       backgroundImage: {
         boom: "url('/boom.png')",

@@ -20,7 +20,7 @@ export default function Home() {
   );
   const posts2 = Array(6).fill(posts[0]);
   return (
-    <div className='flex flex-col gap-y-5 font-inter '>
+    <div className='flex flex-col gap-y-5 font-inter dark:bg-haiti dark:text-white'>
       <Header />
       <main className='px-8'>
         <BlogPosts posts={posts}>Recent blog posts</BlogPosts>
