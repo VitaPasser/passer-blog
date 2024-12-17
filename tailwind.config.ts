@@ -21,6 +21,10 @@ export default {
       borderColor: {
         "black-34": "rgba(0, 0, 0, 0.34)",
       },
+      textColor: {
+        "purple-heart": "#6941C6",
+        "pale-sky": "#667085",
+      },
     },
   },
   plugins: [],
