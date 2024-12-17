@@ -6,11 +6,15 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "cod-gray": "#121212",
+        "purple-heart": "#6941C6",
+        "pale-sky": "#667085",
       },
       backgroundImage: {
         boom: "url('/boom.png')",
@@ -20,10 +24,6 @@ export default {
       },
       borderColor: {
         "black-34": "rgba(0, 0, 0, 0.34)",
-      },
-      textColor: {
-        "purple-heart": "#6941C6",
-        "pale-sky": "#667085",
       },
     },
   },
