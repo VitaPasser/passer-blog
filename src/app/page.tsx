@@ -8,7 +8,7 @@ export default function Home() {
     {
       title: 'UX review presentations',
       description: 'How do you create compelling presentations that wow your colleagues and impress your managers?',
-      tags: ['Design', 'Research', 'Presentation'],
+      tags: ['Design', 'Research', 'Presentation', 'UX', 'UI', 'Value'],
       publish_date: 'Sunday , 1 Jan 2023',
       image:
       {

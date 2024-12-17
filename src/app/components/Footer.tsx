@@ -11,7 +11,7 @@ const Footer = () => {
                 <Link href="/">RSS feed</Link>
                 <Link href="/">Add to Feedly</Link>
             </div>
-            <p>&copy; 2023</p>
+            <p>&copy; { new Date().getFullYear() }</p>
         </footer>
     )
 }

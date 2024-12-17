@@ -33,8 +33,8 @@ const ArticleCard = ({
         <section className='flex flex-col gap-6'>
             <Image
                 src={image.link}
-                width='326'
-                height='240'
+                width='1920'
+                height='1080'
                 alt={image.alt}
             />
             <div className='flex flex-col gap-3'>
@@ -45,7 +45,7 @@ const ArticleCard = ({
                 </Link>
                 <p className='text-base font-normal text-pale-sky'>{description}</p>
             </div>
-            <div className='flex flex-row gap-2'>
+            <div className='flex flex-row flex-wrap gap-2'>
                 {tags.map((tag, key) => <Tag key={key} tag={tag} />)}
             </div>
         </section >
