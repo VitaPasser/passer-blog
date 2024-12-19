@@ -35,10 +35,8 @@ const setRandomColors = (
 }
 
 const Tag = ({
-    key,
     tag
 }: {
-    key: number,
     tag: string
 }) => {
 
@@ -52,7 +50,6 @@ const Tag = ({
     return (
         <p
             className={`rounded-full px-[10px] py-[2px] ${colorBgTag} ${colorTextTag} text-sm font-medium`}
-            key={key}
         > {tag}</p>
     )
 }

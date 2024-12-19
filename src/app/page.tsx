@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import RecentBlogPosts from './components/BlogPosts/RecentBlogPosts';
 import BlogPosts from './components/BlogPosts/BlogPosts';
+import Pagination from './components/Pagination';
 
 export default function Home() {
   const posts: MiniaturePost[] = Array(4).fill(
@@ -26,6 +27,7 @@ export default function Home() {
       <main className='px-8'>
         <RecentBlogPosts posts={posts}>Recent blog posts</RecentBlogPosts>
         <BlogPosts posts={posts2}>All blog posts</BlogPosts>
+        <Pagination currentPage={5} totalPages={10} />
       </main>
       <Footer />
     </div>
