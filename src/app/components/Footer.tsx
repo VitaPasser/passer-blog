@@ -11,7 +11,7 @@ const Footer = () => {
                 <Link href="/">RSS feed</Link>
                 <Link href="/">Add to Feedly</Link>
             </div>
-            <p className='order-first'>&copy; {new Date().getFullYear()}</p>
+            <p className='md:order-first'>&copy; {new Date().getFullYear()}</p>
         </footer>
     )
 }
