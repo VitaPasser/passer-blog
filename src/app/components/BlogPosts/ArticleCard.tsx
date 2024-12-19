@@ -2,22 +2,8 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiMiniArrowUpRight } from "react-icons/hi2";
-import Tag from './Tag';
-
-
-export type TImage = {
-    link: string
-    alt: string
-}
-
-export type MiniaturePost = {
-    title: string
-    description: string
-    tags: string[]
-    publish_date: string
-    image: TImage
-    link_to_post: string
-}
+import Tag from '../Tag';
+import { MiniaturePost } from './SpecialArticleCard';
 
 const ArticleCard = ({
     title,
@@ -30,7 +16,7 @@ const ArticleCard = ({
 ) => {
 
     return (
-        <section className='flex flex-col gap-6'>
+        <section className='flex flex-col gap-6 md:w-[calc(50%-8px)]'>
             <Image
                 src={image.link}
                 width='1920'

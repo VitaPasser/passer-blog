@@ -1,7 +1,8 @@
-import { MiniaturePost } from './components/ArticleCard';
+import { MiniaturePost } from './components/BlogPosts/SpecialArticleCard';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import BlogPosts from './components/BlogPosts';
+import RecentBlogPosts from './components/BlogPosts/RecentBlogPosts';
+import BlogPosts from './components/BlogPosts/BlogPosts';
 
 export default function Home() {
   const posts: MiniaturePost[] = Array(4).fill(
@@ -20,10 +21,10 @@ export default function Home() {
   );
   const posts2 = Array(6).fill(posts[0]);
   return (
-    <div className='flex flex-col gap-y-5 font-inter dark:bg-haiti dark:text-white'>
+    <div className='flex flex-col gap-y-5 md:gap-y-[30px] font-inter dark:bg-haiti dark:text-white'>
       <Header />
       <main className='px-8'>
-        <BlogPosts posts={posts}>Recent blog posts</BlogPosts>
+        <RecentBlogPosts posts={posts}>Recent blog posts</RecentBlogPosts>
         <BlogPosts posts={posts2}>All blog posts</BlogPosts>
       </main>
       <Footer />

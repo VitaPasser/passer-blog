@@ -8,13 +8,15 @@ import TurnDarkMode from "./TurnDarkMode";
 
 type Props = {
     name?: string
+    className?: string
 }
 
-const Menu = ({ name }: Props) => {
+const Menu = ({ name, className }: Props) => {
+    const className_ = className ?? ''
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <>
+        <div className={className_}>
             {isOpen ?
                 <div className='h-screen w-screen z-40 fixed inset-0'>
                     <aside className='h-screen w-screen z-50 bg-white dark:bg-cod-gray flex flex-col items-center'>
@@ -43,7 +45,7 @@ const Menu = ({ name }: Props) => {
                     <IoMenuOutline className='w-8 h-8' />
                 </button>
             }
-        </>
+        </div>
     )
 }
 

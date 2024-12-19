@@ -26,7 +26,7 @@ export default {
       },
       borderColor: {
         "black-34": "rgba(0, 0, 0, 0.34)",
-      },
+      }
     },
   },
   plugins: [],

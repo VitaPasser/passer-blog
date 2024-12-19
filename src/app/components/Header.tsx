@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <Navbar />
       <Link href='/'>
-        <h1 className='uppercase text-center text-7xl font-bold border-y border-black-34 dark:border-white leading-[1.1806]'>the blog</h1>
+        <h1 className='uppercase text-center text-7xl font-bold border-y border-black-34 dark:border-white leading-[1.1806] md:leading-[1.2009] md:text-[160.8px]'>the blog</h1>
       </Link>
     </>
   )
