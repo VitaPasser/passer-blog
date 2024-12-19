@@ -31,15 +31,17 @@ const SpecialArticleCard = ({
 
     return (
         <section className='group/item'>
-            <div className='md:group-first/item:relative md:group-last/item:relative '>
-                <Image
-                    className='md:group-first/item:max-h-[400px] object-cover'
-                    src={image.link}
-                    width='1920'
-                    height='1080'
-                    alt={image.alt}
-                />
-                <div className='flex flex-col gap-6 bg-white dark:bg-haiti md:group-first/item:w-[101%] pt-6 md:group-first/item:absolute md:group-last/item:absolute md:group-first/item:bottom-[-1px] md:group-first/item:left-[-1px] md:group-first/item:pl-[1px] md:group-first/item:pr-[7px] md:group-last/item:w-[101%] md:group-last/item:bottom-[-1px] md:group-last/item:left-[-1px] md:group-first/last:pl-[1px] md:group-last/item:pr-[7px]'>
+            <div className='flex flex-col gap-6 md:group-first/item:h-[400px] md:group-last/item:h-[400px] overflow-y-hidden md:flex-row md:group-first/item:flex-col md:group-last/item:flex-col'>
+                <div className="md:group-first/item:flex-1 md:group-first/item:overflow-hidden md:group-last/item:flex-1 md:group-last/item:overflow-hidden">
+                    <Image
+                        className="md:group-first/item:w-full md:group-first/item:h-full md:group-first/item:object-cover md:group-last/item:w-full md:group-last/item:h-full md:group-last/item:object-cover md:w-[320px] md:max-w-none md:object-cover"
+                        src={image.link}
+                        width="1920"
+                        height="1080"
+                        alt={image.alt}
+                    />
+                </div>
+                <div className='flex flex-col gap-6'>
                     <div className='flex flex-col gap-3'>
                         <p className='text-sm font-semibold text-purple-heart'>{publish_date}</p>
                         <Link className='flex flex-row justify-between font-semibold text-2xl items-center' href={link_to_post}>
