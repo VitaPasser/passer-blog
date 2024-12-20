@@ -4,6 +4,7 @@ import Header from './components/Header';
 import RecentBlogPosts from './components/BlogPosts/RecentBlogPosts';
 import BlogPosts from './components/BlogPosts/BlogPosts';
 import Pagination from './components/Pagination';
+import Image from 'next/image';
 
 export default function Home() {
   const posts: MiniaturePost[] = Array(4).fill(
@@ -22,14 +23,24 @@ export default function Home() {
   );
   const posts2 = Array(6).fill(posts[0]);
   return (
-    <div className='flex flex-col gap-y-5 md:gap-y-[30px] font-inter dark:bg-haiti dark:text-white'>
+    <div className='flex flex-col gap-y-5 md:gap-y-[30px] xl:gap-y-[50px] font-inter dark:bg-haiti dark:text-white xl:px-28'>
       <Header />
-      <main className='px-8'>
+      <main className='px-8 xl:px-0'>
         <RecentBlogPosts posts={posts}>Recent blog posts</RecentBlogPosts>
         <BlogPosts posts={posts2}>All blog posts</BlogPosts>
         <Pagination currentPage={5} totalPages={10} />
       </main>
       <Footer />
+      <div className='flex flex-wrap '>
+        <Image className='basis-2/4 h-[400px]'
+          src='/boom.png' width='400' height='400' alt='some' />
+        <Image className='basis-1/4  h-[200px]'
+          src='/boom.png' width='400' height='400' alt='some' />
+        <Image className='basis-1/4  h-[200px]'
+          src='/boom.png' width='400' height='400' alt='some' />
+        <Image className='basis-full'
+          src='/boom.png' width='400' height='400' alt='some' />
+      </div>
     </div>
   );
 }

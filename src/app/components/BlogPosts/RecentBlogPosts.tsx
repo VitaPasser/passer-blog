@@ -8,9 +8,9 @@ type Props = {
 
 const RecentBlogPosts = ({ posts, children }: Props) => {
     return (
-        <section className='flex flex-col gap-y-8 py-[30px] group'>
+        <section className='flex flex-col gap-y-8 py-[30px] xl:pt-[10px] xl:pb-[30px] group'>
             <h2 className='font-semibold text-2xl'>{children}</h2>
-            <div className='flex flex-col gap-y-8'>
+            <div className='flex flex-col xl:flex-row xl:flex-wrap gap-y-8 xl:gap-x-8 xl:gap-y-[30px]'>
                 {
                     posts.map((post, key) => {
                         return (
