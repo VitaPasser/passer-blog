@@ -32,7 +32,10 @@ const SpecialArticleCard = ({
     return (
         <section className='group/item'>
             <div className='flex flex-col gap-6 md:group-first/item:h-[400px] md:group-last/item:h-[400px] overflow-y-hidden md:flex-row md:group-first/item:flex-col md:group-last/item:flex-col'>
-                <div className="md:group-first/item:flex-1 md:group-first/item:overflow-hidden md:group-last/item:flex-1 md:group-last/item:overflow-hidden">
+                <Link
+                    className="md:group-first/item:flex-1 md:group-first/item:overflow-hidden md:group-last/item:flex-1 md:group-last/item:overflow-hidden"
+                    href={link_to_post}
+                >
                     <Image
                         className="md:group-first/item:w-full md:group-first/item:h-full md:group-first/item:object-cover md:group-last/item:w-full md:group-last/item:h-full md:group-last/item:object-cover md:w-[320px] md:max-w-none md:object-cover"
                         src={image.link}
@@ -40,16 +43,19 @@ const SpecialArticleCard = ({
                         height="1080"
                         alt={image.alt}
                     />
-                </div>
+                </Link>
                 <div className='flex flex-col gap-6'>
-                    <div className='flex flex-col gap-3'>
+                    <Link
+                        className='flex flex-col gap-3'
+                        href={link_to_post}
+                    >
                         <p className='text-sm font-semibold text-purple-heart'>{publish_date}</p>
-                        <Link className='flex flex-row justify-between font-semibold text-2xl items-center' href={link_to_post}>
-                            <h3>{title}</h3>
+                        <h3 className='flex flex-row justify-between font-semibold text-2xl items-center'>
+                            <span>{title}</span>
                             <HiMiniArrowUpRight />
-                        </Link>
+                        </h3>
                         <p className='text-base font-normal text-pale-sky'>{description}</p>
-                    </div>
+                    </Link>
                     <div className='flex flex-row flex-wrap gap-2'>
                         {tags.map((tag, key) => <Tag key={key} tag={tag} />)}
                     </div>

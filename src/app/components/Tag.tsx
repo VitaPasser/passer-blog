@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const setRandomColors = (
@@ -48,9 +49,10 @@ const Tag = ({
     }, [])
 
     return (
-        <p
+        <Link
+            href={"tags/" + tag}
             className={`rounded-full px-[10px] py-[2px] ${colorBgTag} ${colorTextTag} text-sm font-medium`}
-        > {tag}</p>
+        > {tag}</Link>
     )
 }
 
