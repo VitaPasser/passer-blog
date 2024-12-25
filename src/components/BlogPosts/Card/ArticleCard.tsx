@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiMiniArrowUpRight } from "react-icons/hi2";
-import Tag from '../Tag';
+import Tag from '../../Tag';
 import { MiniaturePost } from './SpecialArticleCard';
 
 const ArticleCard = ({
@@ -16,7 +16,7 @@ const ArticleCard = ({
 ) => {
 
     return (
-        <section className='flex flex-col gap-6 md:w-[calc(50%-8px)]'>
+        <section className='flex flex-col gap-6 md:w-[calc(50%-8px)] xl:w-[calc(100%/3-(64px/3))]'>
             <Link
                 className='flex flex-col gap-6'
                 href={link_to_post}>
@@ -27,7 +27,11 @@ const ArticleCard = ({
                     alt={image.alt}
                 />
                 <div className='flex flex-col gap-3'>
-                    <p className='text-sm font-semibold text-purple-heart'>{publish_date}</p>
+                    <p className='text-sm font-semibold text-purple-heart'>
+                        {publish_date.dayweek}
+                        <span className='date-to-dot'></span>
+                        {publish_date.date}
+                    </p>
                     <h3 className='flex flex-row justify-between font-semibold text-2xl items-center'>
                         <span>{title}</span>
                         <HiMiniArrowUpRight />
