@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import lineClamp from "@tailwindcss/line-clamp"
 
 export default {
   content: [
@@ -26,8 +27,8 @@ export default {
       },
       borderColor: {
         "black-34": "rgba(0, 0, 0, 0.34)",
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [lineClamp],
 } satisfies Config;

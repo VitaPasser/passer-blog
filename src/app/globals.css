@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.date-to-dot::before {
+    content: " , ";
+  }
+
+@media (min-width: 1280px) {
+    .date-to-dot::before {
+    content: " • ";
+  }
+}
