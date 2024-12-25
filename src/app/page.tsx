@@ -2,6 +2,7 @@ import { MiniaturePost } from '../components/BlogPosts/Card/SpecialArticleCard';
 import RecentBlogPosts from '../components/BlogPosts/RecentBlogPosts';
 import BlogPosts from '../components/BlogPosts/BlogPosts';
 import Pagination from '../components/Pagination';
+import Link from 'next/link';
 
 export default function Home() {
   const posts: MiniaturePost[] = Array(4).fill(
@@ -23,10 +24,12 @@ export default function Home() {
   );
   const posts2 = Array(6).fill(posts[0]);
   return (
-    <main className='px-8 xl:px-0'>
+    <>
       <RecentBlogPosts posts={posts}>Recent blog posts</RecentBlogPosts>
-      <BlogPosts className='py-[30px]' posts={posts2}>All blog posts</BlogPosts>
-      <Pagination currentPage={5} totalPages={10} />
-    </main>
+      <BlogPosts className='py-[30px]' posts={posts2}>
+        <Link href='/post'>All blog posts</Link>
+      </BlogPosts>
+      <Pagination currentPage={1} totalPages={10} />
+    </>
   );
 }

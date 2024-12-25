@@ -24,11 +24,11 @@ const Posts = () => {
     return (
         <div>
             <BlogPosts
-                className='py-[10px]'
+                className='py-[30px] xl:py-[10px]'
                 posts={posts}>
                 All blog posts
             </BlogPosts>
-            <Pagination currentPage={5} totalPages={10} />
+            <Pagination currentPage={1} totalPages={10} />
         </div>
     )
 }

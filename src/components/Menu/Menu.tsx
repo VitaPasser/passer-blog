@@ -25,10 +25,30 @@ const Menu = ({ name, className }: Props) => {
                                 {name || 'Your Name'}
                             </p>
                             <section className='flex flex-col items-center gap-y-[20px]'>
-                                <MenuLink href='/blog'>Blog</MenuLink>
-                                <MenuLink href='/projects'>Projects</MenuLink>
-                                <MenuLink href='/about'>About</MenuLink>
-                                <MenuLink href='/news'>Newsletter</MenuLink>
+                                <MenuLink
+                                    onClick={() => setIsOpen(false)}
+                                    href='/posts'
+                                >
+                                    Blog
+                                </MenuLink>
+                                <MenuLink
+                                    onClick={() => setIsOpen(false)}
+                                    href='/projects'
+                                >
+                                    Projects
+                                </MenuLink>
+                                <MenuLink
+                                    onClick={() => setIsOpen(false)}
+                                    href='/about'
+                                >
+                                    About
+                                </MenuLink>
+                                <MenuLink
+                                    onClick={() => setIsOpen(false)}
+                                    href='/news'
+                                >
+                                    Newsletter
+                                </MenuLink>
                                 <TurnDarkMode />
                             </section>
                         </div>

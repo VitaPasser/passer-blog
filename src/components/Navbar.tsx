@@ -14,7 +14,7 @@ const Navbar = ({ name }: Props) => {
             <p className='font-semibold text-lg leading-6'>{name || 'Your Name'}</p>
             <Menu className='md:hidden' />
             <section className='hidden md:flex gap-[14px]'>
-                <MenuLink href='/post'>Blog</MenuLink>
+                <MenuLink href='/posts'>Blog</MenuLink>
                 <MenuLink href='/projects'>Projects</MenuLink>
                 <MenuLink href='/about'>About</MenuLink>
                 <MenuLink href='/newsletter'>Newsletter</MenuLink>
