@@ -1,6 +1,4 @@
 import { MiniaturePost } from '../components/BlogPosts/Card/SpecialArticleCard';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import RecentBlogPosts from '../components/BlogPosts/RecentBlogPosts';
 import BlogPosts from '../components/BlogPosts/BlogPosts';
 import Pagination from '../components/Pagination';
