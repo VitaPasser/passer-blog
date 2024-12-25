@@ -1,9 +1,14 @@
+'use client'
 import BlogPosts from '@/components/BlogPosts/BlogPosts'
 import { MiniaturePost } from '@/components/BlogPosts/Card/SpecialArticleCard'
 import Pagination from '@/components/Pagination'
+import { validatePageNumber } from '@/utils/validate'
+import { useSearchParams } from 'next/navigation'
 import React from 'react'
 
 const Posts = () => {
+    const page = useSearchParams().get("page")
+    const pageNumber = validatePageNumber(page)
     const posts: MiniaturePost[] = Array(6).fill(
         {
             title: 'UX review presentations',
@@ -28,7 +33,7 @@ const Posts = () => {
                 posts={posts}>
                 All blog posts
             </BlogPosts>
-            <Pagination currentPage={1} totalPages={10} />
+            <Pagination currentPage={pageNumber} totalPages={10} />
         </div>
     )
 }
