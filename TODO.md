@@ -1,6 +1,17 @@
 # Technical goals
 
-## Must have
+## Actual goals
+-[ ] Change linking for tags
+-[ ] Added functionality for reader markdown in post
+-[ ] Added page for tags
+-[ ] Added newsletters
+-[ ] Added page projects
+-[ ] Added page newsletter
+-[ ] Added page about
+
+## Other goals
+
+### Must have
 -[ ] I want to posting:
     -[ ] I want to create post.
         -[ ] Post will need have images, text, links, formatting.
@@ -19,12 +30,12 @@
 -[ ] Authorization.
 -[ ] Beautiful UI.
 
-## Should have
+### Should have
 -[ ] Searching:
     -[ ] Searching posts.
     -[ ] Searching tags.
     -[ ] Searching categories.
 
-## Could have
+### Could have
 -[ ] Comments.
 -[ ] User profile.
