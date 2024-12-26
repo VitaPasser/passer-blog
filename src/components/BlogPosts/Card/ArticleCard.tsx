@@ -19,7 +19,7 @@ const ArticleCard = ({
 ) => {
     const className_ = className ?? ''
     return (
-        <section className={'flex flex-col gap-6' + className_}>
+        <section className={'flex flex-col gap-6 ' + className_}>
             <Link
                 className='flex flex-col gap-6'
                 href={link_to_post}>
@@ -39,7 +39,7 @@ const ArticleCard = ({
                         <span>{title}</span>
                         <HiMiniArrowUpRight />
                     </h3>
-                    <p className='text-base font-normal text-pale-sky'>{description}</p>
+                    <p className='text-base font-normal text-pale-sky dark:text-ghost'>{description}</p>
                 </div>
             </Link>
             <div className='flex flex-row flex-wrap gap-2'>

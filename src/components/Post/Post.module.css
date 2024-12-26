@@ -1,8 +1,72 @@
 
-.markdown > h1 {
-    @apply text-2xl text-black
+.markdown {
+    @apply text-pale-sky leading-6 space-y-3
 }
 
-:global(.dark) .markdown > h1 {
-    @apply text-white
+.markdown   h1 {
+    @apply text-2xl font-bold
+}
+
+.markdown   h2 {
+    @apply text-lg font-bold
+}
+
+.markdown   h3, .markdown   h4, .markdown   h5, .markdown   h6 {
+    @apply text-base font-bold
+}
+
+.markdown   span   math {
+    @apply py-3
+}
+
+.markdown ul {
+    @apply list-disc list-inside pl-2
+}
+
+.markdown ol {
+    @apply list-decimal list-inside
+}
+
+.markdown {
+    @apply flex flex-col
+}
+
+.markdown iframe {
+    @apply self-center
+}
+
+.markdown hr {
+    @apply border-t-2
+}
+
+.markdown a {
+    @apply underline underline-offset-4
+}
+
+.markdown u {
+    @apply underline underline-offset-4
+}
+
+.markdown table {
+    @apply border-collapse border border-slate-400 
+}
+
+.markdown tr, .markdown td, .markdown th {
+    @apply border-collapse border border-slate-400 p-3
+}
+
+.markdown blockquote {
+    @apply italic pl-2 border-l-2 
+}
+
+.markdown li > li, .markdown li > ul, .markdown li > ol {
+    @apply pl-8
+}
+
+.markdown li > p:first-child {
+    @apply inline
+}
+
+:global(.dark) .markdown   * {
+    @apply text-ghost
 }

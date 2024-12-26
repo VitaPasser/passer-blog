@@ -27,9 +27,7 @@ export default function RootLayout({
         <div className='flex xl:justify-center xl:content-center xl:items-center dark:bg-haiti'>
           <div className='flex flex-col gap-y-5 md:gap-y-[30px] xl:gap-y-[50px] font-inter dark:bg-haiti dark:text-white xl:px-[30px] xl:w-[1280px] min-w-full xl:min-w-[auto]'>
             <Header />
-            <main className='px-8 xl:px-0'>
-              {children}
-            </main>
+            {children}
             <Footer />
           </div>
         </div>

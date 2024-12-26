@@ -18,7 +18,7 @@ const BlogPosts = ({ posts, children, className }: Props) => {
                     posts.map((post, key) => {
                         return (
                             <ArticleCard
-                                className='md:w-[calc(50%-8px)] xl:w-[calc(100%/3-(64px/3))] '
+                                className='md:w-[calc(50%-8px)] xl:w-[calc(100%/3-(64px/3))]'
                                 key={key}
                                 title={post.title}
                                 description={post.description}
