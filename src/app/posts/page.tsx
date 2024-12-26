@@ -1,11 +1,12 @@
 'use client'
 import BlogPosts from '@/components/BlogPosts/BlogPosts'
 import { MiniaturePost } from '@/components/BlogPosts/Card/SpecialArticleCard'
-import NameChapter from '@/components/NameChapter'
+import TitleChapter from '@/components/TitleChapter'
 import Pagination from '@/components/Pagination'
 import { validatePageNumber } from '@/utils/validate'
 import { useSearchParams } from 'next/navigation'
 import React from 'react'
+import Main from '@/components/Main'
 
 const Posts = () => {
     const page = useSearchParams().get("page")
@@ -28,15 +29,17 @@ const Posts = () => {
         }
     );
     return (
-        <div>
-            <NameChapter>the blog</NameChapter>
-            <BlogPosts
-                className='py-[30px] xl:py-[10px]'
-                posts={posts}>
-                All blog posts
-            </BlogPosts>
-            <Pagination currentPage={pageNumber} totalPages={10} />
-        </div>
+        <>
+            <TitleChapter>the blog</TitleChapter>
+            <Main>
+                <BlogPosts
+                    className='py-[30px] xl:py-[10px]'
+                    posts={posts}>
+                    All blog posts
+                </BlogPosts>
+                <Pagination currentPage={pageNumber} totalPages={10} />
+            </Main>
+        </>
     )
 }
 

@@ -19,7 +19,7 @@ const ArticleCard = ({
 ) => {
     const className_ = className ?? ''
     return (
-        <section className={'flex flex-col gap-6' + className_}>
+        <section className={'flex flex-col gap-6 ' + className_}>
             <Link
                 className='flex flex-col gap-6'
                 href={link_to_post}>

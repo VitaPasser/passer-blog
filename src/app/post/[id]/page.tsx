@@ -169,25 +169,25 @@ html image inside text block <img src="https://habrastorage.org/webt/m_/it/vm/m_
     }
     const posts: MiniaturePost[] = Array(12).fill(
         {
-          title: 'UX review presentations',
-          description: 'How do you create compelling presentations that wow your colleagues and impress your managers?',
-          tags: ['Design', 'Research', 'Presentation', 'UX', 'UI', 'Value'],
-          publish_date: {
-            dayweek: 'Sunday',
-            date: '1 Jan 2023',
-          },
-          image:
-          {
-            link: '/posts/1.png',
-            alt: 'Two tables, chairs and a human walk fast to the side.'
-          },
-          link_to_post: '/',
+            title: 'UX review presentations',
+            description: 'How do you create compelling presentations that wow your colleagues and impress your managers?',
+            tags: ['Design', 'Research', 'Presentation', 'UX', 'UI', 'Value'],
+            publish_date: {
+                dayweek: 'Sunday',
+                date: '1 Jan 2023',
+            },
+            image:
+            {
+                link: '/posts/1.png',
+                alt: 'Two tables, chairs and a human walk fast to the side.'
+            },
+            link_to_post: '/',
         }
-      );
+    );
     return (
-        <div className='flex flex-row group gap-x-8 px-8'>
-            <RecentBlogPosts2 className='xl:max-w-[342px]' posts={posts}>Recent blog posts</RecentBlogPosts2>
+        <div className='flex flex-col md:flex-row group gap-x-8 xl:px-8'>
             <Post_ className='' post={post} />
+            <RecentBlogPosts2 className='md:order-first xl:max-w-[342px]' posts={posts}>Recent blog posts</RecentBlogPosts2>
         </div>
     )
 }
