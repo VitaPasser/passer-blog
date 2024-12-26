@@ -1,7 +1,7 @@
 # Technical goals
 
 ## Actual goals
--[ ] Change linking for tags
+-[x] Change linking for tags
 -[ ] Added functionality for reader markdown in post
 -[ ] Added page for tags
 -[ ] Added newsletters

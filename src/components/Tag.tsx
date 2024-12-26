@@ -50,8 +50,9 @@ const Tag = ({
 
     return (
         <Link
-            href={"tags/" + tag}
+            href={"/tags/" + tag}
             className={`rounded-full px-[10px] py-[2px] ${colorBgTag} ${colorTextTag} text-sm font-medium`}
+            replace
         > {tag}</Link>
     )
 }
