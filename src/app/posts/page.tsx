@@ -25,7 +25,7 @@ const Posts = () => {
                 link: '/posts/1.png',
                 alt: 'Two tables, chairs and a human walk fast to the side.'
             },
-            link_to_post: '/',
+            link_to_post: '/post/1',
         }
     );
     return (

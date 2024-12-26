@@ -73,7 +73,8 @@ print({"a":0})
 1. item - 1
 1. item - 1
     - item
-    - item
+    - item  
+    item
 
     - item
 1. item - 1
@@ -113,7 +114,9 @@ Internal link: [link to h1](#h1)
 4. Тренировать навык прохождения собеседования
 
 image:
+
 ![Luke](https://habrastorage.org/webt/m_/it/vm/m_itvm5jqcvwj68gsk150c_caj0.jpeg)
+
 emoji: ⛺  ?‚
 
 # 9. Tables
@@ -165,7 +168,12 @@ html image inside text block <img src="https://habrastorage.org/webt/m_/it/vm/m_
         publish_date: {
             dayweek: 'Sunday',
             date: '1 Jan 2023',
-        }
+        },
+        cover:
+        {
+            link: '/posts/1.png',
+            alt: 'Two tables, chairs and a human walk fast to the side.'
+        },
     }
     const posts: MiniaturePost[] = Array(12).fill(
         {
@@ -181,7 +189,7 @@ html image inside text block <img src="https://habrastorage.org/webt/m_/it/vm/m_
                 link: '/posts/1.png',
                 alt: 'Two tables, chairs and a human walk fast to the side.'
             },
-            link_to_post: '/',
+            link_to_post: '/post/1',
         }
     );
     return (

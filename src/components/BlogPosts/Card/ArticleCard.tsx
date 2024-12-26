@@ -39,7 +39,7 @@ const ArticleCard = ({
                         <span>{title}</span>
                         <HiMiniArrowUpRight />
                     </h3>
-                    <p className='text-base font-normal text-pale-sky'>{description}</p>
+                    <p className='text-base font-normal text-pale-sky dark:text-ghost'>{description}</p>
                 </div>
             </Link>
             <div className='flex flex-row flex-wrap gap-2'>

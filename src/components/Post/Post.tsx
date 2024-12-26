@@ -1,5 +1,7 @@
 import React from 'react'
 import Tag from '../Tag'
+import Image from 'next/image';
+import { TDate, TImage } from '../BlogPosts/Card/SpecialArticleCard'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
@@ -7,16 +9,12 @@ import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import stylePost from './Post.module.css'
 
-export type TDate = {
-    dayweek: string
-    date: string
-}
-
 export type TPost = {
     title: string
     content: string
     tags: string[]
     publish_date: TDate
+    cover: TImage
 }
 
 const Post = ({
@@ -28,7 +26,7 @@ const Post = ({
 }
 ) => {
     const className_ = className ?? ''
-    const { title, content, tags, publish_date } = post
+    const { title, content, tags, publish_date, cover } = post
     return (
         <section className={'flex flex-col gap-6 ' + className_}>
             <div className='flex flex-col gap-8'>
@@ -40,10 +38,17 @@ const Post = ({
                 <h2 className='flex flex-row justify-between font-semibold text-4xl items-center'>
                     <span>{title}</span>
                 </h2>
+                <Image
+                    className='w-full max-h-96 object-cover'
+                    src={cover.link}
+                    width='1920'
+                    height='1080'
+                    alt={cover.alt}
+                />
                 <Markdown
                     remarkPlugins={[[remarkGfm], [remarkMath]]}
                     rehypePlugins={[[rehypeRaw], [rehypeKatex, { output: 'mathml' }]]}
-                    className={'text-base font-normal text-pale-sky ' + stylePost.markdown}>
+                    className={'text-base font-normal text-pale-sky dark:text-ghost ' + stylePost.markdown}>
                     {content}
                 </Markdown>
             </div>

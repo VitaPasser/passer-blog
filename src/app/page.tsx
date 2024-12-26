@@ -21,7 +21,7 @@ export default function Home() {
         link: '/posts/1.png',
         alt: 'Two tables, chairs and a human walk fast to the side.'
       },
-      link_to_post: '/',
+      link_to_post: '/post/1',
     }
   );
   const posts2 = Array(6).fill(posts[0]);
