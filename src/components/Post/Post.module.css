@@ -1,0 +1,8 @@
+
+.markdown > h1 {
+    @apply text-2xl text-black
+}
+
+:global(.dark) .markdown > h1 {
+    @apply text-white
+}

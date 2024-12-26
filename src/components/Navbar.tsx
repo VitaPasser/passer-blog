@@ -2,16 +2,14 @@ import React from 'react'
 import Menu from './Menu/Menu';
 import TurnDarkMode from './Menu/TurnDarkMode';
 import MenuLink from './Menu/MenuLink';
+import Link from 'next/link';
 
-
-type Props = {
-    name?: string
-}
-
-const Navbar = ({ name }: Props) => {
+const Navbar = () => {
     return (
         <div className='flex justify-between items-center p-5 xl:pt-[30px] xl:pb-0 xl:px-0'>
-            <p className='font-semibold text-lg leading-6'>{name || 'Your Name'}</p>
+            <Link href='/'>
+                <p className='font-semibold text-lg leading-6'>Vita Passer</p>
+            </Link>
             <Menu className='md:hidden' />
             <section className='hidden md:flex gap-[14px]'>
                 <MenuLink href='/posts'>Blog</MenuLink>

@@ -3,6 +3,7 @@ import RecentBlogPosts from '../components/BlogPosts/RecentBlogPosts';
 import BlogPosts from '../components/BlogPosts/BlogPosts';
 import Pagination from '../components/Pagination';
 import Link from 'next/link';
+import NameChapter from '@/components/NameChapter';
 
 export default function Home() {
   const posts: MiniaturePost[] = Array(4).fill(
@@ -25,6 +26,7 @@ export default function Home() {
   const posts2 = Array(6).fill(posts[0]);
   return (
     <>
+      <NameChapter>the blog</NameChapter>
       <RecentBlogPosts posts={posts}>Recent blog posts</RecentBlogPosts>
       <BlogPosts className='py-[30px]' posts={posts2}>
         <Link href='/post'>All blog posts</Link>

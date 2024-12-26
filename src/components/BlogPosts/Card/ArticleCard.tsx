@@ -11,12 +11,15 @@ const ArticleCard = ({
     tags,
     publish_date,
     image,
-    link_to_post
-}: MiniaturePost
+    link_to_post,
+    className
+}: MiniaturePost & {
+    className?: string
+}
 ) => {
-
+    const className_ = className ?? ''
     return (
-        <section className='flex flex-col gap-6 md:w-[calc(50%-8px)] xl:w-[calc(100%/3-(64px/3))]'>
+        <section className={'flex flex-col gap-6' + className_}>
             <Link
                 className='flex flex-col gap-6'
                 href={link_to_post}>
