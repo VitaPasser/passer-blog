@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "It's blog by Vita Passer",
 };
 
-export const inter = Inter({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
