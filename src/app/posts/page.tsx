@@ -5,12 +5,16 @@ import TitleChapter from '@/components/TitleChapter'
 import Pagination from '@/components/Pagination'
 import { validatePageNumber } from '@/utils/validate'
 import { useSearchParams } from 'next/navigation'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Main from '@/components/Main'
 
-const Posts = () => {
+function Search() {
     const page = useSearchParams().get("page")
     const pageNumber = validatePageNumber(page)
+    return <Pagination currentPage={pageNumber} totalPages={10} />
+}
+
+const Posts = () => {
     const posts: MiniaturePost[] = Array(6).fill(
         {
             title: 'UX review presentations',
@@ -32,12 +36,14 @@ const Posts = () => {
         <>
             <TitleChapter>the blog</TitleChapter>
             <Main>
-                <BlogPosts
-                    className='py-[30px] xl:py-[10px]'
-                    posts={posts}>
-                    All blog posts
-                </BlogPosts>
-                <Pagination currentPage={pageNumber} totalPages={10} />
+                <Suspense>
+                    <BlogPosts
+                        className='py-[30px] xl:py-[10px]'
+                        posts={posts}>
+                        All blog posts
+                    </BlogPosts>
+                    <Search />
+                </Suspense>
             </Main>
         </>
     )
