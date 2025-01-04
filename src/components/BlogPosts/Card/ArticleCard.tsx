@@ -31,7 +31,7 @@ const ArticleCard = ({
                 />
                 <div className='flex flex-col gap-3'>
                     <p className='text-sm font-semibold text-purple-heart'>
-                        {publish_date.dayweek}
+                        {publish_date.day_week}
                         <span className='date-to-dot'></span>
                         {publish_date.date}
                     </p>

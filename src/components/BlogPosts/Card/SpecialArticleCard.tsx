@@ -11,7 +11,7 @@ export type TImage = {
 }
 
 export type TDate = {
-    dayweek: string
+    day_week: string
     date: string
 }
 
@@ -55,7 +55,7 @@ const SpecialArticleCard = ({
                         href={link_to_post}
                     >
                         <p className='text-sm font-semibold text-purple-heart'>
-                            {publish_date.dayweek}
+                            {publish_date.day_week}
                             <span className='date-to-dot'></span>
                             {publish_date.date}
                         </p>

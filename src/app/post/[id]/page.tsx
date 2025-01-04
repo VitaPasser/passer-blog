@@ -5,13 +5,13 @@ import { MiniaturePost } from '@/components/BlogPosts/Card/SpecialArticleCard'
 import getPostsMiniature, { PostFetch } from '@/utils/getPostsMiniature'
 
 const Post = async (
-        {
+    {
         params,
     }: {
         params: { id: string }
-        }
+    }
 ) => {
-    const data = await fetch(`http://${process.env.URL_SERVER}/api/posts/${Number(await(params).id) || 1}`, {
+    const data = await fetch(`http://${process.env.URL_SERVER}/api/posts/${Number(await (params).id) || 1}`, {
         method: "GET",
     });
     const postsFetch: PostFetch = await data.json();
@@ -21,7 +21,7 @@ const Post = async (
         content: postsFetch.content,
         tags: postsFetch.tags.map((tag) => tag.title),
         publish_date: {
-            dayweek: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
+            day_week: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
                 date
             ),
             date: new Intl.DateTimeFormat("en-US", {

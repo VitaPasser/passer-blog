@@ -31,7 +31,7 @@ export default async function getPostsMiniature() {
       description: post.description,
       tags: post.tags.map((tag) => tag.title),
       publish_date: {
-        dayweek: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
+        day_week: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
           date
         ),
         date: new Intl.DateTimeFormat("en-US", {
