@@ -8,7 +8,6 @@
 -[ ] Added page projects
 -[ ] Added page newsletter
 -[ ] Added page about
--[ ] Added logic for null of description. 
 
 ## Other goals
 
@@ -18,7 +17,7 @@
         -[ ] Post will need have images, text, links, formatting.
     -[ ] I want to delete post.
     -[ ] I want to change post.
--[ ] I want to other and me view posts.
+-[x] I want to other and me view posts.
 -[ ] I want to have access that CUD only my.
 -[ ] I want this will be category and maybe tags.
 -[ ] And I want this will be CRUD for category and tags:

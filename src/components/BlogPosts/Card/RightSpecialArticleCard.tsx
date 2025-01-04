@@ -4,6 +4,11 @@ import Link from 'next/link';
 import { HiMiniArrowUpRight } from "react-icons/hi2";
 import Tag from '../../Tag';
 import { MiniaturePost } from './SpecialArticleCard';
+import Markdown from 'react-markdown';
+import rehypeKatex from 'rehype-katex';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 
 
 const RightSpecialArticleCard = ({
@@ -45,7 +50,11 @@ const RightSpecialArticleCard = ({
                             <span className='line-clamp-1'>{title}</span>
                             <HiMiniArrowUpRight />
                         </h3>
-                        <p className='text-base font-normal text-pale-sky dark:text-ghost xl:max-h-[72px] overflow-hidden line-clamp-3 break-all'>{description}</p>
+                        <Markdown
+                            remarkPlugins={[[remarkGfm], [remarkMath]]}
+                            rehypePlugins={[[rehypeRaw], [rehypeKatex, { output: 'mathml' }]]}
+                            className='text-base font-normal text-pale-sky dark:text-ghost xl:max-h-[72px] overflow-hidden line-clamp-3 break-all'>{description}
+                        </Markdown>
                     </Link>
                     <div className='flex flex-row flex-wrap gap-2 overflow-hidden xl:max-h-6'>
                         {tags.map((tag, key) => <Tag key={key} tag={tag} />)}
