@@ -11,6 +11,7 @@ export type PostFetch = {
   id: number;
   title: string;
   content: string;
+  description: string;
   link_to_cover: string;
   alt_cover: string;
   created_at: string;
@@ -27,8 +28,7 @@ export default async function getPostsMiniature() {
     const date = new Date(post.created_at);
     const result: MiniaturePost = {
       title: post.title,
-      description:
-        post.content.match(/(?!^[#]+\s.+\n)^.+/gm)?.[0] || post.content,
+      description: post.description,
       tags: post.tags.map((tag) => tag.title),
       publish_date: {
         dayweek: new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
