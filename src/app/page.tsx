@@ -1,39 +1,32 @@
-import { MiniaturePost } from '../components/BlogPosts/Card/SpecialArticleCard';
 import RecentBlogPosts from '../components/BlogPosts/RecentBlogPosts';
 import BlogPosts from '../components/BlogPosts/BlogPosts';
 import Pagination from '../components/Pagination';
 import Link from 'next/link';
 import TitleChapter from '@/components/TitleChapter';
 import Main from '@/components/Main';
+import getPost from '@/utils/getPostsMiniature';
 
-export default function Home() {
-  const posts: MiniaturePost[] = Array(4).fill(
-    {
-      title: 'UX review presentations',
-      description: 'How do you create compelling presentations that wow your colleagues and impress your managers?',
-      tags: ['Design', 'Research', 'Presentation', 'UX', 'UI', 'Value'],
-      publish_date: {
-        dayweek: 'Sunday',
-        date: '1 Jan 2023',
-      },
-      image:
-      {
-        link: '/posts/1.png',
-        alt: 'Two tables, chairs and a human walk fast to the side.'
-      },
-      link_to_post: '/post/1',
-    }
-  );
-  const posts2 = Array(6).fill(posts[0]);
+export default async function Home() {
+  const allPosts = await getPost();
+  const numberOfPosts = 6;
+  const maxPages = Math.ceil(allPosts.length / numberOfPosts);
+  const lastIndex = (allPosts.length - 1);
+  const countRecentBlocks = 4
+  const randRecentPostIndexEnd = Math.random() * (lastIndex - countRecentBlocks) + countRecentBlocks;
+  const recentPosts = allPosts.slice(randRecentPostIndexEnd - countRecentBlocks, randRecentPostIndexEnd);
+  const otherPosts = allPosts
+    .toSorted((a, b) => new Date(b.publish_date.date).getTime() - new Date(a.publish_date.date).getTime())
+    .slice(0, numberOfPosts);
+
   return (
     <>
       <TitleChapter>the blog</TitleChapter>
       <Main>
-        <RecentBlogPosts posts={posts}>Recent blog posts</RecentBlogPosts>
-        <BlogPosts className='py-[30px]' posts={posts2}>
+        <RecentBlogPosts posts={recentPosts}>Recent blog posts</RecentBlogPosts>
+        <BlogPosts className='py-[30px]' posts={otherPosts}>
           <Link href='/post'>All blog posts</Link>
         </BlogPosts>
-        <Pagination currentPage={1} totalPages={10} />
+        <Pagination url='/posts/' currentPage={1} totalPages={maxPages} />
       </Main>
     </>
   );
