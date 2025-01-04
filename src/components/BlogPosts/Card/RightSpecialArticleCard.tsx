@@ -45,7 +45,7 @@ const RightSpecialArticleCard = ({
                             <span className='line-clamp-1'>{title}</span>
                             <HiMiniArrowUpRight />
                         </h3>
-                        <p className='text-base font-normal text-pale-sky dark:text-ghost xl:max-h-[72px] overflow-hidden line-clamp-3'>{description}</p>
+                        <p className='text-base font-normal text-pale-sky dark:text-ghost xl:max-h-[72px] overflow-hidden line-clamp-3 break-all'>{description}</p>
                     </Link>
                     <div className='flex flex-row flex-wrap gap-2 overflow-hidden xl:max-h-6'>
                         {tags.map((tag, key) => <Tag key={key} tag={tag} />)}
