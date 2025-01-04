@@ -2,8 +2,9 @@ import BlogPosts from '@/components/BlogPosts/BlogPosts'
 import TitleChapter from '@/components/TitleChapter'
 import React, { Suspense } from 'react'
 import Main from '@/components/Main'
-import getPostsMiniature from '@/utils/getPostsMiniature'
 import Pagination from '@/components/Pagination'
+import { MiniaturePost } from '@/components/BlogPosts/Card/SpecialArticleCard'
+import { IPagination } from '@/app/page'
 
 
 const Posts = async ({
@@ -14,12 +15,11 @@ const Posts = async ({
     }
 }) => {
     const pageNumber = Number(((await params).page || ['1'])[0]);
-    const numberOfPosts = 12;
-    const allPosts = (await getPostsMiniature());
-    const posts = allPosts
-        .toSorted((a, b) => new Date(b.publish_date.date).getTime() - new Date(a.publish_date.date).getTime())
-        .slice(numberOfPosts * (pageNumber - 1), numberOfPosts * pageNumber);
-    const maxPages = Math.ceil(allPosts.length / numberOfPosts);
+    const data_ = await fetch(`http://${process.env.URL_SERVER}/api/posts/miniatures/${pageNumber}?count_elements_page=12`, {
+        method: "GET",
+      });
+    const { data, pagination }: { data: MiniaturePost[], pagination: IPagination } = await data_.json();
+    const posts = data;
 
     return (
         <>
@@ -31,7 +31,7 @@ const Posts = async ({
                         posts={posts}>
                         All blog posts
                     </BlogPosts>
-                    <Pagination url='/posts/' currentPage={pageNumber} totalPages={maxPages} />
+                    <Pagination url='/posts/' currentPage={pagination.current_page} totalPages={pagination.total_pages} />
                 </Suspense>
             </Main>
         </>

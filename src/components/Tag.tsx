@@ -2,6 +2,10 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
+export type TTag = {
+    title: string
+}
+
 const setRandomColors = (
     setColorBgTag: (value: string) => void,
     setColorTextTag: (value: string) => void
@@ -36,9 +40,9 @@ const setRandomColors = (
 }
 
 const Tag = ({
-    tag
+    tag: { title }
 }: {
-    tag: string
+    tag: TTag
 }) => {
 
     const [colorBgTag, setColorBgTag] = useState<string>('slate-50');
@@ -50,10 +54,10 @@ const Tag = ({
 
     return (
         <Link
-            href={"/tags/" + tag}
+            href={"/tags/" + title}
             className={`rounded-full px-[10px] py-[2px] ${colorBgTag} ${colorTextTag} text-sm font-medium`}
             replace
-        > {tag}</Link>
+        > {title}</Link>
     )
 }
 

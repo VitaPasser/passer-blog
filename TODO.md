@@ -2,12 +2,13 @@
 
 ## Actual goals
 -[x] Change linking for tags
--[ ] Added functionality for reader markdown in post
+-[x] Added functionality for reader markdown in post
 -[ ] Added page for tags
 -[ ] Added newsletters
 -[ ] Added page projects
 -[ ] Added page newsletter
 -[ ] Added page about
+-[ ] Added logic for null of description. 
 
 ## Other goals
 

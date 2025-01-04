@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiMiniArrowUpRight } from "react-icons/hi2";
-import Tag from '../../Tag';
+import Tag, { TTag } from '../../Tag';
 
 
 export type TImage = {
@@ -18,7 +18,7 @@ export type TDate = {
 export type MiniaturePost = {
     title: string
     description: string
-    tags: string[]
+    tags: TTag[]
     publish_date: TDate
     image: TImage
     link_to_post: string

@@ -5,18 +5,28 @@ import Link from 'next/link';
 import TitleChapter from '@/components/TitleChapter';
 import Main from '@/components/Main';
 import getPost from '@/utils/getPostsMiniature';
+import { MiniaturePost } from '@/components/BlogPosts/Card/SpecialArticleCard';
+
+export interface IPagination {
+  total: number,
+  count: number,
+  per_page: number,
+  current_page: number,
+  total_pages: number,
+}
 
 export default async function Home() {
+  const data_ = await fetch(`http://${process.env.URL_SERVER}/api/posts/miniatures/1?count_elements_page=6&count_elements_page_for_next_pagination=12`, {
+    method: "GET",
+  });
+  const { data, pagination }: { data: MiniaturePost[], pagination: IPagination } = await data_.json();
+  const otherPosts = data;
+  console.log(data);
   const allPosts = await getPost();
-  const numberOfPosts = 6;
-  const maxPages = Math.ceil(allPosts.length / numberOfPosts);
   const lastIndex = (allPosts.length - 1);
   const countRecentBlocks = 4
   const randRecentPostIndexEnd = Math.random() * (lastIndex - countRecentBlocks) + countRecentBlocks;
   const recentPosts = allPosts.slice(randRecentPostIndexEnd - countRecentBlocks, randRecentPostIndexEnd);
-  const otherPosts = allPosts
-    .toSorted((a, b) => new Date(b.publish_date.date).getTime() - new Date(a.publish_date.date).getTime())
-    .slice(0, numberOfPosts);
 
   return (
     <>
@@ -26,7 +36,7 @@ export default async function Home() {
         <BlogPosts className='py-[30px]' posts={otherPosts}>
           <Link href='/post'>All blog posts</Link>
         </BlogPosts>
-        <Pagination url='/posts/' currentPage={1} totalPages={maxPages} />
+        <Pagination url='/posts/' currentPage={pagination.current_page} totalPages={pagination.total_pages} />
       </Main>
     </>
   );
