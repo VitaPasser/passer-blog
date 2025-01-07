@@ -4,7 +4,6 @@ import Pagination from '../components/Pagination';
 import Link from 'next/link';
 import TitleChapter from '@/components/TitleChapter';
 import Main from '@/components/Main';
-import getPost from '@/utils/getPostsMiniature';
 import { MiniaturePost } from '@/components/BlogPosts/Card/SpecialArticleCard';
 
 export interface IPagination {
