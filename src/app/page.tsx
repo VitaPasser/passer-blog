@@ -16,17 +16,12 @@ export interface IPagination {
 }
 
 export default async function Home() {
-  const data_ = await fetch(`http://${process.env.URL_SERVER}/api/posts/miniatures/1?count_elements_page=6&count_elements_page_for_next_pagination=12`, {
+  const data_ = await fetch(`http://${process.env.URL_SERVER}/api/posts/miniatures/1?count_elements_page=10&count_elements_page_for_next_pagination=12`, {
     method: "GET",
   });
   const { data, pagination }: { data: MiniaturePost[], pagination: IPagination } = await data_.json();
-  const otherPosts = data;
-  console.log(data);
-  const allPosts = await getPost();
-  const lastIndex = (allPosts.length - 1);
-  const countRecentBlocks = 4
-  const randRecentPostIndexEnd = Math.random() * (lastIndex - countRecentBlocks) + countRecentBlocks;
-  const recentPosts = allPosts.slice(randRecentPostIndexEnd - countRecentBlocks, randRecentPostIndexEnd);
+  const otherPosts = data.slice(4);
+  const recentPosts = data.slice(0, 4);
 
   return (
     <>
