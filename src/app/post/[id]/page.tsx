@@ -3,6 +3,7 @@ import Post_, { TPost } from '@/components/Post/Post'
 import RecentBlogPosts2 from '@/components/BlogPosts/RecentBlogPosts2'
 import { MiniaturePost } from '@/components/BlogPosts/Card/SpecialArticleCard'
 import getPostsMiniature, { PostFetch } from '@/utils/getPostsMiniature'
+import ErrorList from '@/components/ErrorList'
 
 const Post = async (
     {
@@ -11,10 +12,18 @@ const Post = async (
         params: { id: string }
     }
 ) => {
-    const data = await fetch(`http://${process.env.URL_SERVER}/api/posts/${Number(await (params).id) || 1}`, {
+    const data = await fetch(`http://${process.env.URL_SERVER}/api/posts/${Number((await (params)).id) || 1}`, {
         method: "GET",
     });
     const postsFetch: PostFetch = await data.json();
+    
+    if ('errors_messages' in postsFetch) { 
+        return (
+            <>
+                <ErrorList errors={postsFetch.errors_messages}/>
+            </>
+        );
+    }
     const date = new Date(postsFetch.created_at);
     const post: TPost = {
         title: postsFetch.title,

@@ -1,4 +1,5 @@
 import { MiniaturePost} from "@/components/BlogPosts/Card/SpecialArticleCard";
+import { IErrorMessage } from "@/components/ErrorList";
 
 export type TagFetch = {
   id: number;
@@ -17,6 +18,8 @@ export type PostFetch = {
   created_at: string;
   updated_at: string;
   tags: TagFetch[];
+} | {
+  errors_messages: IErrorMessage[]
 };
 
 export default async function getPostsMiniature() {
